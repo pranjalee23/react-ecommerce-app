@@ -1,40 +1,16 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./app.scss";
-import CategoryDirectory from "./components/CategoryDirectory";
+import Navigation from "./routes/Navigation";
+import Home from "./routes/home";
 
 function App() {
-  const categories = [
-    {
-      id: 1,
-      title: "Hats",
-      image: "https://i.ibb.co/cvpntL1/hats.png",
-    },
-    {
-      id: 2,
-      title: "Jackets",
-      image: "https://i.ibb.co/px2tCc3/jackets.png",
-    },
-    {
-      id: 3,
-      title: "Sneakers",
-      image: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    },
-    {
-      id: 4,
-      title: "Womens",
-      image: "https://i.ibb.co/GCCdy8t/womens.png",
-    },
-    {
-      id: 5,
-      title: "Mens",
-      image: "https://i.ibb.co/R70vBrQ/men.png",
-    },
-  ];
-
   return (
-    <>
-      <CategoryDirectory categories={categories} />
-    </>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" />
+      </Route>
+    </Routes>
   );
 }
 
