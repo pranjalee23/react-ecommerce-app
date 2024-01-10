@@ -6,12 +6,15 @@ const Navigation = () => {
   return (
     <>
       <div className="navigation-wrapper">
-        <Link className="logo-wrapper" to="/">
+        <Link className="logo-wrapper" to="/"> 
           <AppLogo className="logo" />
         </Link>
         <div className="nav-links-wrapper">
           <Link className="nav-link" to={"/shop"}>
-            Shop
+            Shop  
+          </Link>
+          <Link className="nav-link" to={"/sign-in"}>
+            Sign In
           </Link>
         </div>
       </div>
